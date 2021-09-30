@@ -1,0 +1,84 @@
+index	name	abbreviation	color
+1	right lateral orbitofrontal gyrus	R latOrbG	n/a
+2	right pars orbitalis	R ParsOrb	n/a
+3	right frontal pole	R Fpole	n/a
+4	right medial orbitofrontal gyrus	R medOrbG	n/a
+5	right pars triangularis	R ParsTri	n/a
+6	right pars opercularis	R ParsOper	n/a
+7	right rostral middle frontal gyrus	R rosMFG	n/a
+8	right superior frontal gyrus	R SFG	n/a
+9	right caudal middle frontal gyrus	R cauMFG	n/a
+10	right precentral gyrus	R PreCG	n/a
+11	right paracentral gyrus	R ParaCG	n/a
+12	right rostral anterior cingulate cortex	R rosACC	n/a
+13	right caudal anterior cingulate cortex	R cauACC	n/a
+14	right posterior cingulate cortex	R PCC	n/a
+15	right isthmus	R Isth	n/a
+16	right postcentral gyrus	R PostCG	n/a
+17	right supramarginal gyrus	R SMG	n/a
+18	right superior parietal gyrus	R SPG	n/a
+19	right inferior parietal gyrus	R IPG	n/a
+20	right precuneus	R PreCun	n/a
+21	right cuneus	R Cun	n/a
+22	right pericalcarine	R PeriCal	n/a
+23	right lateral occipital gyrus	R latOccG	n/a
+24	right lingual gyrus	R LinG	n/a
+25	right fusiform gyrus	R FusiG	n/a
+26	right parahippocampal gyrus	R PHG	n/a
+27	right entorhinal cortex	R EntC	n/a
+28	right temporal pole	R Tpole	n/a
+29	right inferior temporal gyrus	R ITG	n/a
+30	right middle temporal gyrus	R MTG	n/a
+31	right bank ssts	R bank ssts	n/a
+32	right superior temporal gyrus	R STG	n/a
+33	right transverse temporal gyrus	R TransTG	n/a
+34	right insula	R Ins	n/a
+35	right thalamus proper	R Thal	n/a
+36	right caudate	R Cau	n/a
+37	right putamen	R Put	n/a
+38	right pallidum	R Pal	n/a
+39	right accumbens area	R AccA	n/a
+40	right hippocampus	R Hipp	n/a
+41	right amygdala	R Amg	n/a
+42	left lateral orbitofrontal gyrus	L latOrbG	n/a
+43	left pars orbitalis	L ParsOrb	n/a
+44	left frontal pole	L Fpole	n/a
+45	left medial orbitofrontal gyrus	L medOrbG	n/a
+46	left pars triangularis	L ParsTri	n/a
+47	left pars opercularis	L ParsOper	n/a
+48	left rostral middle frontal gyrus	L rosMFG	n/a
+49	left superior frontal gyrus	L SFG	n/a
+50	left caudal middle frontal gyrus	L cauMFG	n/a
+51	left precentral gyrus	L PreCG	n/a
+52	left paracentral gyrus	L ParaCG	n/a
+53	left rostral anterior cingulate cortex	L rosACC	n/a
+54	left caudal anterior cingulate cortex	L cauACC	n/a
+55	left posterior cingulate cortex	L PCC	n/a
+56	left isthmus	L Isth	n/a
+57	left postcentral gyrus	L PostCG	n/a
+58	left supramarginal gyrus	L SMG	n/a
+59	left superior parietal gyrus	L SPG	n/a
+60	left inferior parietal gyrus	L IPG	n/a
+61	left precuneus	L PreCun	n/a
+62	left cuneus	L Cun	n/a
+63	left pericalcarine	L PeriCal	n/a
+64	left lateral occipital gyrus	L latOccG	n/a
+65	left lingual gyrus	L LinG	n/a
+66	left fusiform gyrus	L FusiG	n/a
+67	left parahippocampal gyrus	L PHG	n/a
+68	left entorhinal cortex	L EntC	n/a
+69	left temporal pole	L Tpole	n/a
+70	left inferior temporal gyrus	L ITG	n/a
+71	left middle temporal gyrus	L MTG	n/a
+72	left bank ssts	L bank ssts	n/a
+73	left superior temporal gyrus	L STG	n/a
+74	left transverse temporal gyrus	L TransTG	n/a
+75	left insula	L Ins	n/a
+76	left thalamus proper	L Thal	n/a
+77	left caudate	L Cau	n/a
+78	left putamen	L Put	n/a
+79	left pallidum	L Pal	n/a
+80	left accumbens area	L AccA	n/a
+81	left hippocampus	L Hipp	n/a
+82	left amygdala	L Amg	n/a
+83	brainstem	Bstem	n/a
