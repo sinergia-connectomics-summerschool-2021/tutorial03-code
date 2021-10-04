@@ -17,8 +17,9 @@ end
 
 %% initialisation
 %subj init
-BIDS_folder=fullfile('..','..');
+BIDS_folder=fullfile('/', 'home','sinergiasummerschool','Data','ds003505');
 MRI_preproc_folder=fullfile(BIDS_folder,'derivatives','cmp');
+EEG_preproc_folder=fullfile(BIDS_folder,'derivatives','eeg_preprocessing');
 task='task-faces';
 id_sub=1;
 sub_id = sprintf('sub-%02d',id_sub);
@@ -26,9 +27,9 @@ sub_id = sprintf('sub-%02d',id_sub);
 %mri file
 mri_filename = fullfile(MRI_preproc_folder, sub_id,'anat', [sub_id,'_desc-head_T1w.nii.gz']); 
 %gray matter map file
-GM_filename=fullfile(MRI_preproc_folder,sub_id,'anat',[sub_id,'_label-GM_dseg.nii.gz']); 
+GM_filename=fullfile(EEG_preproc_folder,sub_id,'anat',[sub_id,'_label-GM_dseg.nii.gz']); 
 %atlas file
-atlas_filename=fullfile(MRI_preproc_folder,sub_id,'anat',[sub_id,'_label-L2008_desc-scale1_atlas.nii.gz']);  
+atlas_filename=fullfile(MRI_preproc_folder,sub_id,'anat',[sub_id,'_atlas-L2018_res-scale1_dseg.nii.gz']);  
 %electrode file (coregistered to mri) 
 elec_file=fullfile(BIDS_folder,sub_id, 'eeg', [sub_id '_electrodes.tsv']);
 
@@ -136,9 +137,15 @@ elec = ft_read_sens(elec_file); %yet to be coregistered
 fig = verify_head_and_source_models(headmodel, sourcemodel, elec, 1);
 
 %% save in BIDS
+
 derivatives_path = fullfile(BIDS_folder, 'derivatives', 'mri_preprocessing', sub_id, 'anat');
 if ~exist(derivatives_path, 'dir')
    mkdir(derivatives_path) 
+else
+    % Tell Datalad to allow files to be modified
+    mri_preprocessing_derivatives_dir = fullfile(BIDS_folder, 'derivatives', 'mri_preprocessing');
+    [status,cmdout] = system('datalad unlock -d '+convertCharsToStrings(BIDS_folder)+' '+ convertCharsToStrings(mri_preprocessing_derivatives_dir));
+    sprintf(cmdout)
 end
 
 %save headmodel

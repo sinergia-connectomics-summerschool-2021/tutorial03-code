@@ -22,7 +22,8 @@ catch
 end
 %% initialisation
 %subj init
-derivatives_folder=fullfile('..','..','derivatives');
+BIDS_folder = fullfile('/', 'home','sinergiasummerschool','Data','ds003505');
+derivatives_folder=fullfile('/', 'home','sinergiasummerschool','Data','ds003505', 'derivatives');
 task='task-faces';
 id_sub = 1;
 sub_id = sprintf('sub-%02d',id_sub);
@@ -48,6 +49,11 @@ load(sourcemodel_fname)
 %preprocessed eeg
 load(eeg_fname)
 
+%% Tell Datalad to allow files to be modified
+if exist(derivatives_path, 'dir')
+    [status,cmdout] = system('datalad unlock -d '+convertCharsToStrings(BIDS_folder)+' '+ convertCharsToStrings(derivatives_path));
+    sprintf(cmdout)
+end
 
 %% estimate the leadfield
 cfg         = [];

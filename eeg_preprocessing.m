@@ -31,7 +31,7 @@ end
 
 %% initialisation
 %subj init
-BIDS_folder=fullfile('..','..');
+BIDS_folder=fullfile('/', 'home','sinergiasummerschool','Data','ds003505');
 
 task='task-faces';
 id_sub=1;
@@ -193,6 +193,12 @@ ft_databrowser(cfg,data_reref);
 %% save to BIDS
 clear data
 data=data_reref;
+
+% Tell Datalad to allow files to be modified
+if exist(derivatives_path, 'dir')
+    [status,cmdout] = system('datalad unlock -d '+convertCharsToStrings(BIDS_folder)+' '+ convertCharsToStrings(derivatives_path));
+    sprintf(cmdout)
+end
 
 %save cleaned data
 save(fullfile(derivatives_path,'data.mat'),'data', 'cfg_preproc')

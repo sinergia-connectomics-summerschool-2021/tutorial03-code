@@ -26,7 +26,7 @@ catch
 end
 %% initialisation
 % subj init
-BIDS_folder=fullfile('..','..');
+BIDS_folder=fullfile('/', 'home','sinergiasummerschool','Data','ds003505');
 
 MRI_preproc_folder=fullfile(BIDS_folder,'derivatives', 'cmp');
 task='task-faces';
@@ -37,7 +37,7 @@ clean_eeg_list = dir(fullfile(BIDS_folder,'derivatives','eeg_preprocessing',...
 clean_eeg_fname = fullfile(clean_eeg_list.folder,clean_eeg_list.name);
 
 atlas_list = dir(fullfile(BIDS_folder,'derivatives','cmp',...
-    sub_name, '**', [sub_name '_label-L2008*scale1*.nii.gz']));
+    sub_name, '**', [sub_name '_atlas-L2018*scale1_dseg.nii.gz']));
 atlas_fname = fullfile(atlas_list.folder,atlas_list.name);
 
 invop_list = dir(fullfile(BIDS_folder,'derivatives','source_modelling',...
@@ -98,6 +98,12 @@ parfor ROI_id = 1:n_ROIs
     ESI_tmp = time_courses.'*curr_filters.'; % Inverse space transformation
     [ROI_traces(ROI_id,:),S,V] = svds(ESI_tmp,1);
     
+end
+
+%% Tell Datalad to allow files to be modified
+if exist(derivatives_path, 'dir')
+    [status,cmdout] = system('datalad unlock -d '+convertCharsToStrings(BIDS_folder)+' '+ convertCharsToStrings(derivatives_path));
+    sprintf(cmdout)
 end
 
 %% recreate a Fieldtrip data structure and store it
