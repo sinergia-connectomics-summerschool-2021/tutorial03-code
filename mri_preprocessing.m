@@ -37,7 +37,7 @@ elec_file=fullfile(BIDS_folder,sub_id, 'eeg', [sub_id '_electrodes.tsv']);
 %headmodel
 cfg_headmdl.tissues={'brain','skull','scalp'}; %band stop freq
 cfg_headmdl.numvertices=[3000,2000,1000]; %vertices for tissues
-cfg_headmdl.method='bemcp';
+cfg_headmdl.method='concentricspheres';
 %sourcemodel
 cfg_sourcemdl.ROI2remove=[35:39,76:80, 83]; %thalamus, caudate, putamen, pallidum, accumbens area, brainstem
 cfg_sourcemdl.method_reslice='cubic';

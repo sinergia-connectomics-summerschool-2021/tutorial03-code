@@ -16,6 +16,12 @@ clc
 close all
 clear
 
+try
+    system('git pull https://github.com/sinergia-connectomics-summerschool-2021/tutorial03-code.git') % pull the newest version of the repository to be sure to be up-to-date
+catch
+    warning('Did not manage to pull the latest version of the code from Github')
+end
+
 % make sure you are in the correct folder
 tmp = matlab.desktop.editor.getActive;
 cd(fileparts(tmp.Filename))
