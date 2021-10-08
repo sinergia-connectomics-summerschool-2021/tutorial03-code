@@ -30,6 +30,7 @@ sub_id = sprintf('sub-%02d',id_sub);
 eeg_fname = fullfile(derivatives_folder, 'eeg_preprocessing', sub_id, 'eeg','data'); %eeg file
 headmodel_fname=fullfile(derivatives_folder, 'mri_preprocessing',sub_id,'anat', [sub_id,'_space-individual_desc-reslice_headmodel']); %headmodel file
 sourcemodel_fname=fullfile(derivatives_folder, 'mri_preprocessing',sub_id,'anat',[sub_id,'_space-individual_desc-reslice_sourcemodel']); %sourcemodel file
+load('elec.mat')
 
 derivatives_path = fullfile(derivatives_folder, 'source_modelling', sub_id, 'eeg');
 if ~exist(derivatives_path, 'dir')
@@ -57,7 +58,7 @@ end
 
 %% estimate the leadfield
 cfg         = [];
-cfg.elec    = data.elec;   % sensor information
+cfg.elec    = elec_proj;   % sensor information
 cfg.sourcemodel    = sourcemodel;   % source points
 cfg.headmodel = headmodel;   % volume conduction model
 leadfield   = ft_prepare_leadfield(cfg);
