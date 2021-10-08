@@ -54,19 +54,18 @@ delete(mri_fname);    rmdir(temp_folder);
 
 %-segment mri
 cfg           = [];
-cfg.output = {'brain', 'skull'};
+cfg.output = cfg_headmdl.tissues;
 segmentedmri  = ft_volumesegment(cfg, mri);
 
-% first little trick applied here because the mri has been defaced, it makes sure the scalp has no holes
-cfg           = [];
-cfg.output = {'scalp'};
-segmentedmri2  = ft_volumesegment(cfg, mri);
+% little trick applied here to recreate a bit of the forehead
+segmentedmri.scalp = (segmentedmri.scalp | ...
+    imdilate(segmentedmri.skull, strel('sphere',10))) & (~segmentedmri.skull &  ~ segmentedmri.brain);
 
-segmentedmri.scalp = segmentedmri2.scalp;
-clear segmentedmri2
-
-segmentedmri.scalp = segmentedmri.scalp | ...
-    imdilate(segmentedmri.skull, strel('sphere',6)); % 2nd little trick applied here to recreate a bit of the forehead
+% Remove the neck
+I = find(segmentedmri.skull);
+[~,~,z] = ind2sub(segmentedmri.dim, I);
+[zmin] = min(z);
+segmentedmri.scalp(:,:, 1:zmin-10) = 0;
 
 %create surfaces (mesh at tissues interfaces)
 cfg=[];

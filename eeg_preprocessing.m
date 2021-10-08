@@ -17,6 +17,7 @@ close all
 clear
 
 try
+    system('git stash --include-untracked') % store the modification in the stash
     system('git pull https://github.com/sinergia-connectomics-summerschool-2021/tutorial03-code.git') % pull the newest version of the repository to be sure to be up-to-date
 catch
     warning('Did not manage to pull the latest version of the code from Github')
