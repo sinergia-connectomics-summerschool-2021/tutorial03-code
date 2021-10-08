@@ -1,11 +1,11 @@
-function fig = verify_head_and_source_models(headmodel, sourcemodel, elec, ortho_view)
+function fig = verify_head_and_source_models(mesh, sourcemodel, elec, ortho_view)
 
 % draw 3D representation of headmodel, source points and electrodes
 fig = figure('Visible', 'off');
-ft_plot_mesh(headmodel.bnd(1), 'facecolor',[0.9 0.2 0.2], 'facealpha', 0.3, 'edgecolor', [1 1 1], 'edgealpha', 0.05);
+ft_plot_mesh(mesh(1), 'facecolor',[0.9 0.2 0.2], 'facealpha', 0.3, 'edgecolor', [1 1 1], 'edgealpha', 0.05);
 hold on;
-ft_plot_mesh(headmodel.bnd(2),'edgecolor','none','facealpha',0.4);
-ft_plot_mesh(headmodel.bnd(3),'edgecolor','none','facecolor',0.4*[1 1 1],'facealpha', 0.3);
+ft_plot_mesh(mesh(2),'edgecolor','none','facealpha',0.4);
+ft_plot_mesh(mesh(3),'edgecolor','none','facecolor',0.4*[1 1 1],'facealpha', 0.3);
 ft_plot_mesh(sourcemodel.pos(sourcemodel.inside,:),'vertexcolor', 'k');
 if exist('elec', 'var') && ~isempty(elec)
     ft_plot_sens(elec, 'style', '.b', 'label', 'label')

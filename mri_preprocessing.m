@@ -133,7 +133,7 @@ T_mat = realign.transformorig/realign.transform;
 
 %% DISPLAY RESULTS
 elec = ft_read_sens(elec_file); %yet to be coregistered
-fig = verify_head_and_source_models(headmodel, sourcemodel, elec, 1);
+fig = verify_head_and_source_models(mesh, sourcemodel, elec, 1);
 
 %% save in BIDS
 
