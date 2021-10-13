@@ -6,3 +6,11 @@ run the scripts in the following order:
 * mri_preprocessing.m
 * source_modelling.m
 * ROI_time_courses.m
+
+Useful Fieldtrip Tutorials:
+* https://www.fieldtriptoolbox.org/example/use_independent_component_analysis_ica_to_remove_eog_artifacts/
+* https://www.fieldtriptoolbox.org/example/use_independent_component_analysis_ica_to_remove_ecg_artifacts/
+* https://www.fieldtriptoolbox.org/tutorial/headmodel_eeg_bem/
+* https://www.fieldtriptoolbox.org/tutorial/sourcemodel/
+* https://www.fieldtriptoolbox.org/workshop/oslo2019/forward_modeling/
+* https://www.fieldtriptoolbox.org/faq/how_can_i_fine-tune_my_bem_volume_conduction_model/#converting_segmentation_to_segmentation
